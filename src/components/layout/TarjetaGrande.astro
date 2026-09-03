@@ -1,0 +1,182 @@
+---
+import Button from '../ui/Button.astro';
+
+interface Props {
+	titulo: string;
+	contenido: string;
+	botonTexto: string;
+	botonHref: string;
+	imagen?: {
+		src: string;
+		alt?: string;
+	};
+	variant?: 'primary' | 'secondary';
+	reverse?: boolean;
+}
+
+const {
+	titulo,
+	contenido,
+	botonTexto,
+	botonHref,
+	imagen,
+	variant = 'primary',
+	reverse = false,
+} = Astro.props;
+---
+
+<article class:list={['tarjeta', `tarjeta-${variant}`, { 'tarjeta-reverse': reverse }]}>
+	<div class="tarjeta-imagen">
+		{imagen && <img src={imagen.src} alt={imagen.alt ?? ''} />}
+	</div>
+
+	<div class="tarjeta-contenido">
+		<h2>{titulo}</h2>
+		<p>{contenido}</p>
+		<div class="tarjeta-iconos" aria-hidden="true">
+            <slot name="iconos" />
+        </div>
+		<Button text={botonTexto} href={botonHref} />
+	</div>
+</article>
+
+<style>
+	.tarjeta {
+		display: flex;
+		align-items: center;
+		gap: 50px;
+		width: min(1160px, calc(100% - 24px));
+		min-height: 400px;
+		padding: 50px 100px;
+		box-sizing: border-box;
+		overflow: hidden;
+		box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
+	}
+
+	.tarjeta-primary {
+		background: var(--extra, #4C4E7D);
+	}
+
+	.tarjeta-secondary {
+		background: var(--main, #FCE4AF);
+	}
+
+	.tarjeta-reverse {
+		flex-direction: row-reverse;
+	}
+
+	.tarjeta-imagen,
+	.tarjeta-contenido {
+		flex: 1 1 0;
+		min-width: 0;
+	}
+
+	.tarjeta-imagen {
+		aspect-ratio: 5 / 3;
+		min-height: 180px;
+		background: rgba(255, 255, 255, 0.88);
+		box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
+	}
+
+	.tarjeta-imagen img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.tarjeta-contenido {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 10px;
+		min-height: 300px;
+		justify-content: center;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+
+	.tarjeta-reverse .tarjeta-contenido {
+		align-items: flex-end;
+		text-align: right;
+	}
+
+	h2 {
+		margin: 0;
+		color: var(--main, #FCE4AF);
+		font-family: 'Saira', sans-serif;
+		font-size: 32px;
+		font-weight: 800;
+		line-height: 1;
+		text-transform: capitalize;
+	}
+
+	.tarjeta-secondary h2 {
+		color: var(--extra, #4C4E7D);
+	}
+
+	p {
+		max-width: 300px;
+		margin: 0;
+		color: var(--white, #FEF6E6);
+		font-family: 'Saira Condensed', sans-serif;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: normal;
+	}
+
+	.tarjeta-secondary p {
+		color: var(--dark, #151622);
+	}
+
+	.tarjeta-iconos {
+		width: 100%;
+		min-height: 40px;
+	}
+    .tarjeta-iconos {
+        display: flex;
+        padding: 10px 0;
+        align-items: flex-start;
+        align-content: flex-start;
+        gap: 10px;
+        align-self: stretch;
+        flex-wrap: wrap;
+    }
+    .tarjeta-iconos > * {
+        width: 40px;
+        height: 40px;
+        background: var(--color-text);
+        transition: transform 0.2s ease-in-out;
+        display: block;
+        flex: 0 0 40px;
+        transform-origin: center;
+    }
+    .tarjeta-iconos > *:hover {
+        transform: scale(1.1);
+    }
+
+	@media (max-width: 760px) {
+		.tarjeta,
+		.tarjeta-reverse {
+			flex-direction: column;
+			gap: 24px;
+			padding: 24px;
+            height: auto;
+		}
+
+		.tarjeta-imagen,
+		.tarjeta-contenido {
+			width: 100%;
+		}
+
+		.tarjeta-contenido,
+		.tarjeta-reverse .tarjeta-contenido {
+			align-items: flex-start;
+			text-align: left;
+            min-height: auto;
+		}
+        .tarjeta-contenido p {
+            max-width: 100%;
+        }
+	}
+</style>

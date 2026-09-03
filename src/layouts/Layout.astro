@@ -1,0 +1,123 @@
+---
+import Navbar from '../components/layout/nav.astro';
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=fit" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro Basics</title>
+	</head>
+	<body>
+		<Navbar />
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	@font-face {
+		font-family: 'Saira Condensed';
+		src: url('/fonts/SairaCondensed-Regular.woff') format('woff');
+		font-style: normal;
+		font-weight: 100 900;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Saira';
+		src: url('/fonts/Saira-VariableFont.woff') format('woff');
+		font-style: normal;
+		font-weight: 100 900;
+		font-display: swap;
+	}
+	:root {
+		--main:#FCE4AF;
+		--white : #FEF6E6;
+		--secondary: #AEB1FC;
+		--terteary: #aee3fc;
+		--complement: #7D6E4C;
+		--extra: #4C4E7D;
+		--dark: #151622;
+
+		--color-primary: var(--main);
+		--color-secondary: var(--complement);
+		--color-terteary: var(--secondary);
+		--color-background: var(--white);
+		--color-surface: var(--terteary);
+		--color-text: var(--dark);
+		--color-text-muted: #6C757D;
+		--color-border: var(--terteary);
+		--color-accent: var(--extra);
+
+		--shadow-border: 4px 4px 0 0 rgba(0, 0, 0, 0.25);
+	}
+
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	body {
+		font-family: 'Saira Condensed', sans-serif;
+		padding-top: 120px;
+		background-color: var(--color-background, #FEF6E6);
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: 'Saira', sans-serif;
+		line-height: 1;
+		leading-trim: both;
+		text-edge: cap;
+
+		text-box-trim: trim-both;
+		text-box-edge: cap alphabetic;
+	}
+	p{
+				line-height: 1;
+		leading-trim: both;
+		text-edge: cap;
+
+		text-box-trim: trim-both;
+		text-box-edge: cap alphabetic;
+	}
+
+	h1 {
+		/* Headline 1 */
+		font-family: 'Saira';
+		font-size: 40px;
+		font-style: normal;
+		font-weight: 800;
+		line-height: normal;
+		text-transform: capitalize;
+	}
+
+	h3 {
+		/* Headline 3 */
+		font-family: 'Saira';
+		font-size: 24px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		text-transform: capitalize;
+	}
+	p{
+		/* Parrafo */
+		font-family: "Saira Condensed";
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+	}
+
+</style>

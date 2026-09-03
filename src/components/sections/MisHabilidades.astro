@@ -1,0 +1,126 @@
+---
+
+import Programas from '../ui/Programas.astro';
+// Importar Iconos SVG
+import AffinityStudio from '../../assets/icons/affinity-studio.svg';
+import AfterEffects from '../../assets/icons/AfterEffects.svg';
+import Apple from '../../assets/icons/Apple.svg';
+import Astro from '../../assets/icons/Astro.svg';
+import Audiacity from '../../assets/icons/Audiacity.svg';
+import Audition from '../../assets/icons/Audition.svg';
+import Css from '../../assets/icons/css.svg';
+import DaVinciResolve from '../../assets/icons/DaVinciResolve.svg';
+import Excel from '../../assets/icons/Excel.svg';
+import Ffmpeg from '../../assets/icons/FFMPEG.svg';
+import Figma from '../../assets/icons/Figma.svg';
+import FlStudio from '../../assets/icons/FLStudio.svg';
+import Flutter from '../../assets/icons/Flutter.svg';
+import Html from '../../assets/icons/html.svg';
+import Illustrator from '../../assets/icons/Illustrator.svg';
+import Java from '../../assets/icons/Java.svg';
+import JavaScript from '../../assets/icons/JavaScript.svg';
+import Linux from '../../assets/icons/Linux.svg';
+import LogicPro from '../../assets/icons/Logic Pro.svg';
+import MediaEncoder from '../../assets/icons/Media Encoder.svg';
+import NodeJs from '../../assets/icons/NodeJs.svg';
+import Obsidian from '../../assets/icons/Obsidian.svg';
+import Photoshop from '../../assets/icons/Photoshop.svg';
+import PremierPro from '../../assets/icons/Premier Pro.svg';
+import Python from '../../assets/icons/Python.svg';
+import React from '../../assets/icons/React.svg';
+import VSCode from '../../assets/icons/VSCode.svg';
+import Vue from '../../assets/icons/Vue.svg';
+import Windows11 from '../../assets/icons/Windows 11.svg';
+import Word from '../../assets/icons/Word.svg';
+
+---
+
+<section class="mis-habilidades" id="mis-habilidades">
+    <h1>Mis Habilidades</h1>
+    <p>Los programas que he usado en mi vida, estos programas son los que me han entrenado para cualquier cosa</p>
+    <div class="programa-lista">
+        <Programas
+            titulo="Sistemas Operativos"
+            descripcion="No hay dispositivo que me detenga"
+        >
+            <img class="icono" src={Windows11.src} alt="Windows" slot="iconos" />
+            <img class="icono" src={Apple.src} alt="Apple" slot="iconos" />
+            <img class="icono" src={Linux.src} alt="Linux" slot="iconos" />
+        </Programas>
+        <Programas
+            titulo="Imagen"
+            descripcion="¡¡No a favor de contenido generativo por AI!!"
+        >
+            <img class="icono" src={AffinityStudio.src} alt="Affinity Studio" slot="iconos" />
+            <img class="icono" src={Figma.src} alt="Figma" slot="iconos" />
+            <img class="icono" src={Photoshop.src} alt="Photoshop" slot="iconos" />
+            <img class="icono" src={Illustrator.src} alt="Illustrator" slot="iconos" />
+        </Programas>
+        <Programas
+            titulo="Audio"
+            descripcion="Talvez no lo sepas, pero quería ser ingeniero de audio"
+        >
+            <img class="icono" src={FlStudio.src} alt="FLStudio" slot="iconos" />
+            <img class="icono" src={Audition.src} alt="Audition" slot="iconos" />
+            <img class="icono" src={LogicPro.src} alt="Logic Pro" slot="iconos" />
+            <img class="icono" src={Audiacity.src} alt="Audiacity" slot="iconos" />
+        </Programas>
+        <Programas
+            titulo="Lenguajes"
+            descripcion="No diferentes tipo de idiomas, pero si el que las computadoras hablan"
+        >
+            <img class="icono" src={Java.src} alt="Java" slot="iconos" />
+            <img class="icono" src={Python.src} alt="Python" slot="iconos" />
+            <img class="icono" src={Css.src} alt="CSS" slot="iconos" />
+            <img class="icono" src={Html.src} alt="HTML" slot="iconos" />
+            <img class="icono" src={JavaScript.src} alt="JavaScript" slot="iconos" />
+            <img class="icono" src={NodeJs.src} alt="Node.js" slot="iconos" />
+            <img class="icono" src={Vue.src} alt="Vue" slot="iconos" />
+            <img class="icono" src={Astro.src} alt="Astro" slot="iconos" />
+            <img class="icono" src={React.src} alt="React" slot="iconos" />
+            <img class="icono" src={Flutter.src} alt="Flutter" slot="iconos" />
+        </Programas>
+        <Programas
+            titulo="Texto"
+            descripcion="El arte de escribir en la computadora"
+        >
+            <img class="icono" src={Obsidian.src} alt="Obsidian" slot="iconos" />
+            <img class="icono" src={VSCode.src} alt="VSCode" slot="iconos" />
+            <img class="icono" src={Word.src} alt="Word" slot="iconos" />
+            <img class="icono" src={Excel.src} alt="Excel" slot="iconos" />
+        </Programas>
+        <Programas
+            titulo="Mis Programas"
+            descripcion="Aquí tienes una lista de los programas que utilizo en mi trabajo."
+        >
+            <img class="icono" src={DaVinciResolve.src} alt="DaVinci Resolve" slot="iconos" />
+            <img class="icono" src={PremierPro.src} alt="Premier Pro" slot="iconos" />
+            <img class="icono" src={AfterEffects.src} alt="After Effects" slot="iconos" />
+            <img class="icono" src={Ffmpeg.src} alt="FFMpeg" slot="iconos" />
+            <img class="icono" src={MediaEncoder.src} alt="Media Encoder" slot="iconos" />
+            <img class="icono" src={VSCode.src} alt="VSCode" slot="iconos" />
+        </Programas>
+    </div>
+    
+</section>
+
+<style>
+    .programa-lista {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        align-content: flex-end;
+        align-self: stretch;
+        flex-wrap: wrap;
+    }
+    .mis-habilidades {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        align-self: stretch;
+        width: 100%;
+        padding: 10px;
+    }
+
+</style>

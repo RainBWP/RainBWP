@@ -1,0 +1,78 @@
+---
+interface Props {
+    text: string;
+    href?: string;
+    variant?: 'primary' | 'secondary';
+    type?: 'button' | 'submit' | 'reset';
+    action?: string;
+    disabled?: boolean;
+}
+
+const {
+    text,
+    href,
+    variant = 'primary',
+    type = 'button',
+    action,
+    disabled = false,
+} = Astro.props;
+---
+
+{
+    href ? (
+        <a class={`boton boton-${variant}`} href={href}>
+            {text}
+        </a>
+    ) : (
+        <button
+            class={`boton boton-${variant}`}
+            type={type}
+            data-action={action}
+            disabled={disabled}
+        >
+            {text}
+        </button>
+    )
+}
+
+
+<style>
+    .boton {
+        display: flex;
+        height: 29px;
+        min-width: 100px;
+        padding: 5px 50px 5px 20px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        box-shadow: var(--shadow-border, 2px 2px 0 0 rgba(0, 0, 0, 0.25));
+
+        text-decoration: none;
+        text-align: left;
+        font-family: "Saira Condensed";
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        
+    }
+    .boton-primary {
+        border: 4px solid var(--color-accent, #4C4E7D);
+        background: var(--color-surface, #AEE3FC);
+        color: var(--color-accent, #4C4E7D);
+    }
+    .boton-secondary {
+        border: 4px solid var(--color-background, #FEF6E6);
+        background: var(--color-accent);
+        color: var(--color-background, #FEF6E6);
+
+        /* Sombra Solida */
+        box-shadow: var(--shadow-border, 2px 2px 0 0 rgba(0, 0, 0, 0.25));
+    }
+    .boton:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+</style>

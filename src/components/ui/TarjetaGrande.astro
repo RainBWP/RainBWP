@@ -1,0 +1,185 @@
+---
+import Button from '../ui/Button.astro';
+
+interface Props {
+	titulo: string;
+	contenido: string;
+	botonTexto: string;
+	botonHref: string;
+	imagen?: {
+		src: string;
+		alt?: string;
+	};
+	variant?: 'primary' | 'secondary';
+	reverse?: boolean;
+}
+
+const {
+	titulo,
+	contenido,
+	botonTexto,
+	botonHref,
+	imagen,
+	variant = 'primary',
+	reverse = false,
+} = Astro.props;
+---
+
+<article class:list={['tarjeta', `tarjeta-${variant}`, { 'tarjeta-reverse': reverse }]}>
+	<div class="tarjeta-imagen">
+		{imagen && <img src={imagen.src} alt={imagen.alt ?? ''} />}
+	</div>
+
+	<div class="tarjeta-contenido">
+		<h2>{titulo}</h2>
+		<p>{contenido}</p>
+		<div class:list={['tarjeta-iconos', { 'tarjeta-iconos-reverse': reverse }]} aria-hidden="true">
+            <slot name="iconos" />
+        </div>
+		<Button text={botonTexto} href={botonHref} />
+	</div>
+</article>
+
+<style>
+	.tarjeta {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 50px;
+		width: 100%;
+		min-height: 400px;
+		padding: clamp(10px, 1vw, 50px) clamp(10px, 4vw, 100px);
+		box-sizing: border-box;
+		overflow: hidden;
+		box-shadow: var(--shadow-border, 2px 2px 0 0 rgba(0, 0, 0, 0.25));
+	}
+
+	.tarjeta-primary {
+		background: var(--color-accent, #4C4E7D);
+	}
+
+	.tarjeta-secondary {
+		background: var(--color-primary, #FCE4AF);
+	}
+
+	.tarjeta-reverse {
+		flex-direction: row-reverse;
+	}
+
+	.tarjeta-imagen,
+	.tarjeta-contenido {
+		flex: 1 1 0;
+		min-width: 0;
+	}
+
+	.tarjeta-imagen {
+		box-shadow: var(--shadow-border, 2px 2px 0 0 rgba(0, 0, 0, 0.25));
+	}
+
+	.tarjeta-imagen img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.tarjeta-contenido {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 10px;
+		min-height: 300px;
+		justify-content: center;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+
+	.tarjeta-reverse .tarjeta-contenido  {
+		align-items: flex-end;
+		text-align: right;
+	}
+
+	.tarjeta-iconos-reverse{
+		justify-content: flex-end;
+	}
+	
+	h2 {
+		margin: 0;
+		color: var(--main, #FCE4AF);
+		font-family: 'Saira', sans-serif;
+		font-size: 32px;
+		font-weight: 800;
+		line-height: 1;
+		text-transform: capitalize;
+	}
+
+	.tarjeta-secondary h2 {
+		color: var(--extra, #4C4E7D);
+	}
+
+	p {
+		max-width: 300px;
+		margin: 0;
+		color: var(--color-background, #FEF6E6);
+		font-family: 'Saira Condensed', sans-serif;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: normal;
+	}
+
+	.tarjeta-secondary p {
+		color: var(--color-text, #151622);
+	}
+
+	.tarjeta-iconos {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		gap: 10px;
+		width: 100%;
+		min-height: 40px;
+	}
+
+	.tarjeta-iconos :global(.icono) {
+		display: block;
+		flex: 0 0 40px;
+		width: 40px;
+		height: 40px;
+		background: var(--color-text, #151622);
+		transition: transform 0.2s ease-in-out;
+		transform-origin: center;
+		box-shadow: var(--shadow-border, 2px 2px 0 0 rgba(0, 0, 0, 0.25));
+		
+	}
+
+	.tarjeta-iconos :global(.icono:hover) {
+		transform: scale(1.1);
+	}
+
+	@media (max-width: 957px) {
+		.tarjeta,
+		.tarjeta-reverse {
+			flex-direction: column;
+			gap: 24px;
+			padding: 24px;
+            height: auto;
+		}
+
+		.tarjeta-imagen,
+		.tarjeta-contenido {
+			width: 100%;
+		}
+		.tarjeta-imagen {
+		.tarjeta-contenido,
+		.tarjeta-reverse .tarjeta-contenido  {
+			align-items: flex-start;
+			text-align: left;
+            min-height: auto;
+		}
+        .tarjeta-contenido p {
+            max-width: 100%;
+        }
+ 
+	}
+</style>

@@ -1,0 +1,101 @@
+---
+import GithubIcon from '../../assets/icons/Github.svg';
+---
+
+<nav class="nav" aria-label="Navegación principal">
+    <h4 class="logo-text" >RBW - Dimi</h4>
+    <div class="nav-links">
+        <a href="#inicio">Productos</a>
+        <a href="#inicio">Habilidades</a>
+        <a href="#inicio">Experiencia</a>
+    </div>
+    <div class="links-buttons" >
+        <GithubIcon href="https://github.com/RainBWP" />
+    </div>
+</nav>
+
+<style>
+    .nav {
+
+        display: flex;
+        width: clamp(calc(100% - 10px), 100%, 800px);
+        height: 70px;
+        padding: 10px 40px;
+        justify-content: space-between;
+        align-items: center;
+        gap: 63px;
+
+        position: fixed;
+        top: 5px;
+        left: 50%;
+        z-index: 1000;
+
+        min-height: 48px;
+
+        transform: translateX(-50%);
+        box-sizing: border-box;
+        border-radius: 999px;
+
+        border-radius: 18px;
+        border: 1px solid var(--color-accent, #4C4E7D);
+        background: var(--color-surface, #AEE3FC);
+
+        box-shadow: var(--shadow-border, 2px 2px 0 0 rgba(0, 0, 0, 0.25));
+    }
+
+    .nav a {
+        color: var(--Extra, #4C4E7D);
+        text-align: center;
+        leading-trim: both;
+        text-edge: cap;
+
+        /* Enlaces */
+        font-family: Saira;
+        font-size: 16px;
+        font-style: italic;
+        font-weight: 400;
+        line-height: normal;
+        text-decoration-line: underline;
+        text-decoration-style: solid;
+        text-decoration-skip-ink: auto;
+        text-decoration-thickness: auto;
+        text-underline-offset: auto;
+        text-underline-position: from-font;
+        text-transform: capitalize;
+    }
+
+    .nav a:hover {
+        color: var(--color-text, #151622);
+    }
+
+    .logo-text {
+        /* Headline 4 */
+        color: #000;
+        leading-trim: both;
+        text-edge: cap;
+
+        /* Headline 4 */
+        font-family: 'Saira';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        text-transform: capitalize;
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex: 1 0 0;
+    }
+
+    @media (max-width: 700px) {
+        .nav {
+            gap:20px;
+        }
+        .nav-links {
+            display: none;
+        }
+    }
+</style>
