@@ -1,4 +1,4 @@
- # Eliel M. Aquino
+ # Eliel Aquino
 
 Programador y diseniador UX/UI, especializado en desarrollo frontend y backend, infraestructura local, sistemas IoT y soporte de hardware.
 
