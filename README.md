@@ -1,46 +1,31 @@
-# Astro Starter Kit: Basics
+ # Eliel M. Aquino
 
-```sh
-npm create astro@latest -- --template basics
-```
+Programador y diseniador UX/UI, especializado en desarrollo frontend y backend, infraestructura local, sistemas IoT y soporte de hardware.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Contacto
 
-## 🚀 Project Structure
+- [LinkedIn](https://www.linkedin.com/in/elielm-aquino/)
+- [GitHub](https://github.com/RainBWP)
+- [Correo](mailto:rain@rainbwp.com)
 
-Inside of your Astro project, you'll see the following folders and files:
+## Proyectos
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+### Gearmoney
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+Aplicacion desarrollada en Flutter. Responsable del diseno UX/UI y del control de calidad.
 
-## 🧞 Commands
+- [Ver codigo fuente](https://github.com/RainBWP/gearmoney)
 
-All commands are run from the root of the project, from a terminal:
+### Lenion
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Sitio web de una empresa creada con companeros de la universidad. Realice el diseno, desarrollo, despliegue y mantenimiento.
 
-## 👀 Want to learn more?
+- [Visitar sitio web](https://lenion.mx)
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Habilidades
+
+- Sistemas operativos: Windows, macOS y Linux
+- Diseno: Affinity, Figma, Photoshop e Illustrator
+- Audio: FL Studio, Audition, Logic Pro y Audacity
+- Desarrollo: Java, Python, HTML, CSS, JavaScript, Node.js, Vue, Astro, React y Flutter
+- Herramientas: Obsidian, VS Code, Word, Excel, DaVinci Resolve, Premiere Pro, After Effects, FFmpeg y Media Encoder
