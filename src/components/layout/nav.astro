@@ -6,11 +6,9 @@ import GithubIcon from '../../assets/icons/Github.svg';
     <h4 class="logo-text" >RBW - Dimi</h4>
     <div class="nav-links" hidden>
         <a href="#inicio">Productos</a>
-        <a href="#inicio">Habilidades</a>
-        <a href="#inicio">Experiencia</a>
     </div>
     <div class="links-buttons" >
-        <a href="https://github.com/RainBWP" ><GithubIcon /></a>
+        <a class="button-href" href="https://github.com/RainBWP" ><GithubIcon /></a>
     </div>
 </nav>
 
@@ -82,13 +80,27 @@ import GithubIcon from '../../assets/icons/Github.svg';
         font-weight: 600;
         line-height: normal;
         text-transform: capitalize;
+        width: max(20%,100px);
     }
 
     .nav-links {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         flex: 1 0 0;
+    }
+    .links-buttons{
+        width: max(20%,50px);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: right;
+    }
+    .button-href{
+        width: 40px;
+        height: 40px;
+        margin: 0;
+        padding: 0;
     }
 
     @media (max-width: 700px) {
