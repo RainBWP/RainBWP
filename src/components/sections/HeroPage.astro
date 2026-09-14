@@ -9,12 +9,14 @@ import HeroImage from '../../assets/images/hero-image.jpg';
     </div>
     <div class="hero">
         <h3 class="subtitle">Hola, soy Eliel</h3>
-        <h1 class="title">Programador / diseñador uX UI</h1>
+        <h1 class="title bigtext">Programador / diseñador uX UI</h1>
+        <h1 class="title smalltext">Programador <br/> diseñador uX UI</h1>
+
         <p class="description">Especialista en desarrollo frontend y backend, infraestructura local, sistemas IoT y soporte de hardware, con rápida adaptabilidad técnica.</p>
         <div class="links-buttons">
-            <Boton text="Correo" href="mailto:rain@rainbwp.com" variant="secondary"/>
-            <Boton text="Linkedin" href="https://www.linkedin.com/in/elielm-aquino/" variant="secondary"/>
-            <Boton text="Github" href="https://github.com/RainBWP"  />
+            <Boton text="Correo" href="mailto:rain@rainbwp.com" variant="secondary" />
+            <Boton text="Linkedin" href="https://www.linkedin.com/in/elielm-aquino/" variant="secondary" newTab/>
+            <Boton text="Github" href="https://github.com/RainBWP"  newTab/>
         </div>
     </div>
     
@@ -29,7 +31,6 @@ import HeroImage from '../../assets/images/hero-image.jpg';
         display: flex;
         flex-wrap: wrap;
         flex-direction: row-reverse;
-        width: 100%;
         min-height: 500px;
         padding: 10px;
         justify-content: center;
@@ -40,7 +41,8 @@ import HeroImage from '../../assets/images/hero-image.jpg';
     .links-buttons {
         display: flex;
         flex-wrap: wrap;
-        padding: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
         justify-content: flex-end;
         align-items: flex-start;
         gap: 10px;
@@ -77,8 +79,8 @@ import HeroImage from '../../assets/images/hero-image.jpg';
     }
     .hero-image-container {
         position: relative;
-        width: 300px;
-        height: 300px;
+        width: 250px;
+        height: 250px;
         border-radius: 50%;
         overflow: hidden;
     }
@@ -100,25 +102,38 @@ import HeroImage from '../../assets/images/hero-image.jpg';
         object-fit: cover;
         object-position: center;
     }
+    .smalltext{
+        display: none;
+    }
+    .bigtext{
+        display: inline;
+    }
 
     @media (max-width: 650px) {
         .inicio {
             flex-direction: column;
-            align-items: center;
-            text-align: center;
+            align-items: left;
+            text-align: left;
         }
         .hero {
-            align-items: center;
+            align-items: left;
         }
         .description, .title, .subtitle {
-            text-align: center;
+            text-align: left;
         }
         .links-buttons {
-            justify-content: center;
+            justify-content: left;
         }
         .hero-image-container {
-            width: 200px;
-            height: 200px;
+            width: 180px;
+            height: 180px;
         }
+        .smalltext{
+            display: inline;
+        }
+        .bigtext{
+            display: none;
+        }
+
     }
 </style>

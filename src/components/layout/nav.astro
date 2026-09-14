@@ -4,13 +4,11 @@ import GithubIcon from '../../assets/icons/Github.svg';
 
 <nav class="nav" aria-label="Navegación principal">
     <h4 class="logo-text" >RBW - Dimi</h4>
-    <div class="nav-links">
+    <div class="nav-links" hidden>
         <a href="#inicio">Productos</a>
-        <a href="#inicio">Habilidades</a>
-        <a href="#inicio">Experiencia</a>
     </div>
     <div class="links-buttons" >
-        <GithubIcon href="https://github.com/RainBWP" />
+        <a class="button-href" href="https://github.com/RainBWP" ><GithubIcon /></a>
     </div>
 </nav>
 
@@ -18,7 +16,7 @@ import GithubIcon from '../../assets/icons/Github.svg';
     .nav {
 
         display: flex;
-        width: clamp(calc(100% - 10px), 100%, 800px);
+        width: min(calc(100% - 20px),1200px);
         height: 70px;
         padding: 10px 40px;
         justify-content: space-between;
@@ -27,7 +25,7 @@ import GithubIcon from '../../assets/icons/Github.svg';
 
         position: fixed;
         top: 5px;
-        left: 50%;
+        left: 50vw;
         z-index: 1000;
 
         min-height: 48px;
@@ -37,8 +35,9 @@ import GithubIcon from '../../assets/icons/Github.svg';
         border-radius: 999px;
 
         border-radius: 18px;
-        border: 1px solid var(--color-accent, #4C4E7D);
-        background: var(--color-surface, #AEE3FC);
+        border: none;
+        background: color-mix(in srgb, var(--color-surface, #AEE3FC), #fff0 40%);
+        backdrop-filter: blur(4px);
 
         box-shadow: var(--shadow-border, 2px 2px 0 0 rgba(0, 0, 0, 0.25));
     }
@@ -75,19 +74,33 @@ import GithubIcon from '../../assets/icons/Github.svg';
         text-edge: cap;
 
         /* Headline 4 */
-        font-family: 'Saira';
+        font-family: 'Saira Condensed',sans-serif;
         font-size: 20px;
         font-style: normal;
         font-weight: 600;
         line-height: normal;
         text-transform: capitalize;
+        width: max(20%,100px);
     }
 
     .nav-links {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         flex: 1 0 0;
+    }
+    .links-buttons{
+        width: max(20%,50px);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: right;
+    }
+    .button-href{
+        width: 40px;
+        height: 40px;
+        margin: 0;
+        padding: 0;
     }
 
     @media (max-width: 700px) {

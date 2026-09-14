@@ -8,86 +8,74 @@ import LenionThumbnail from  '../../assets/images/lenionindex.png';
 
 // Importar Iconos SVG
 import AffinityStudio from '../../assets/icons/affinity-studio.svg';
-import AfterEffects from '../../assets/icons/AfterEffects.svg';
-import Apple from '../../assets/icons/Apple.svg';
-import Astro from '../../assets/icons/Astro.svg';
-import Audiacity from '../../assets/icons/Audiacity.svg';
-import Audition from '../../assets/icons/Audition.svg';
+import AstroIcon from '../../assets/icons/AstroIcon.svg';
 import Cloudflare from '../../assets/icons/Cloudflare.svg';
 import Css from '../../assets/icons/css.svg';
-import DaVinciResolve from '../../assets/icons/DaVinciResolve.svg';
-import Excel from '../../assets/icons/Excel.svg';
-import Ffmpeg from '../../assets/icons/FFMPEG.svg';
 import Figma from '../../assets/icons/Figma.svg';
-import FlStudio from '../../assets/icons/FLStudio.svg';
 import Flutter from '../../assets/icons/Flutter.svg';
-import Github from '../../assets/icons/Github.svg';
 import Html from '../../assets/icons/html.svg';
-import Illustrator from '../../assets/icons/Illustrator.svg';
-import Java from '../../assets/icons/Java.svg';
-import JavaScript from '../../assets/icons/JavaScript.svg';
-import Linux from '../../assets/icons/Linux.svg';
-import LogicPro from '../../assets/icons/Logic Pro.svg';
-import MediaEncoder from '../../assets/icons/Media Encoder.svg';
 import NodeJs from '../../assets/icons/NodeJs.svg';
-import Obsidian from '../../assets/icons/Obsidian.svg';
-import Photoshop from '../../assets/icons/Photoshop.svg';
-import PremierPro from '../../assets/icons/Premier Pro.svg';
-import Python from '../../assets/icons/Python.svg';
-import React from '../../assets/icons/React.svg';
 import VSCode from '../../assets/icons/VSCode.svg';
-import Vue from '../../assets/icons/Vue.svg';
-import Windows11 from '../../assets/icons/Windows 11.svg';
-import Word from '../../assets/icons/Word.svg';
 
 ---
 
 <section class="mis-trabajos" id="mis-trabajos">
     <h1>Mis Trabajos</h1>
     <p>Son proyectos que actualmente estoy trabajando y en producción 🥳</p>
-    <TarjetaGrande
-    titulo="Gearmoney"
-    contenido="Aplicación hecha enteramente en Flutter como proyecto final.Encargado de la UX y UI en diseño, y control de calidad en el mismo. "
-    botonTexto="Ver Codigo Fuente"
-    botonHref="https://github.com/RainBWP/gearmoney"
-    variant="primary"
-    reverse={false}
-    imagen={{ src: GearmoneyThumbnail.src, alt: 'Gearmoney' }}
-    >
-            <img class="icono" src={AffinityStudio.src} alt="Affinity Studio" slot="iconos" />
-            <img class="icono" src={Figma.src} alt="Figma" slot="iconos" />
-            <img class="icono" src={Flutter.src} alt="Flutter" slot="iconos" />
-            <img class="icono" src={VSCode.src} alt="VSCode" slot="iconos" />
-    </TarjetaGrande>
-    <TarjetaGrande
-    titulo="Lenion"
-    contenido="Página principal de la empresa lenion que amigos de la universidad creamos diseño, codigo, levantamiento y mantenimiento realizado por mi"
-    botonTexto="Visitar Sitio Web"
-    botonHref="https://lenion.mx"
-    variant="secondary"
-    reverse={true}
-    imagen={{ src: LenionThumbnail.src, alt: 'Lenion' }}
-    >
-            <img class="icono" src={Cloudflare.src} alt="Cloudflare" slot="iconos" />
-            <img class="icono" src={Figma.src} alt="Figma" slot="iconos" />
-            <img class="icono" src={Css.src} alt="CSS" slot="iconos" />
-            <img class="icono" src={Html.src} alt="HTML" slot="iconos" />
-            <img class="icono" src={NodeJs.src} alt="Node.js" slot="iconos" />
-            <img class="icono" src={VSCode.src} alt="VSCode" slot="iconos" />
-            <img class="icono" src={Astro.src} alt="Astro" slot="iconos" />
-    </TarjetaGrande>
+    <div class="card-containers">
+        <TarjetaGrande
+            titulo="Gearmoney"
+            contenido="Aplicación hecha enteramente en Flutter como proyecto final.Encargado de la UX y UI en diseño, y control de calidad en el mismo. "
+            botonTexto="Ver Codigo Fuente"
+            botonHref="https://github.com/RainBWP/gearmoney"
+            variant="primary"
+            reverse={false}
+            imagen={{ src: GearmoneyThumbnail.src, alt: 'Gearmoney' }}
+            >
+                    <img class="icono" src={AffinityStudio.src} alt="Affinity Studio" slot="iconos" />
+                    <img class="icono" src={Figma.src} alt="Figma" slot="iconos" />
+                    <img class="icono" src={Flutter.src} alt="Flutter" slot="iconos" />
+                    <img class="icono" src={VSCode.src} alt="VSCode" slot="iconos" />
+        </TarjetaGrande>
+        <TarjetaGrande
+            titulo="Lenion"
+            contenido="Página principal de la empresa lenion que amigos de la universidad creamos diseño, codigo, levantamiento y mantenimiento realizado por mi"
+            botonTexto="Visitar Sitio Web"
+            botonHref="https://lenion.mx"
+            newtab
+            variant="secondary"
+            reverse={true}
+            imagen={{ src: LenionThumbnail.src, alt: 'Lenion' }}
+            >
+                    <img class="icono" src={Cloudflare.src} alt="Cloudflare" slot="iconos" />
+                    <img class="icono" src={Figma.src} alt="Figma" slot="iconos" />
+                    <img class="icono" src={Css.src} alt="CSS" slot="iconos" />
+                    <img class="icono" src={Html.src} alt="HTML" slot="iconos" />
+                    <img class="icono" src={NodeJs.src} alt="Node.js" slot="iconos" />
+                    <img class="icono" src={VSCode.src} alt="VSCode" slot="iconos" />
+                    <img class="icono" src={AstroIcon.src} alt="Astro" slot="iconos" />
+        </TarjetaGrande>
+    </div>
+    
 </section>
 
 <style>
+    
     .mis-trabajos {
         display: flex;
-        padding: 10px;
         flex-direction: column;
         justify-content: left;
         align-items: flex-start;
-        gap: 10px;
         align-self: stretch;
         width: 100%;
+    }
+    h1, p, .card-containers{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .card-containers{
+        padding: 20px;
+        margin-bottom: 10px;
     }
     h1 {
         margin: 0;
