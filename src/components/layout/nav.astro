@@ -18,7 +18,7 @@ import GithubIcon from '../../assets/icons/Github.svg';
     .nav {
 
         display: flex;
-        width: clamp(calc(100% - 10px), 100%, 800px);
+        width: clamp(100%,calc(100% - 10px), 800px);
         height: 70px;
         padding: 10px 40px;
         justify-content: space-between;
@@ -37,8 +37,9 @@ import GithubIcon from '../../assets/icons/Github.svg';
         border-radius: 999px;
 
         border-radius: 18px;
-        border: 1px solid var(--color-accent, #4C4E7D);
-        background: var(--color-surface, #AEE3FC);
+        border: none;
+        background: color-mix(in srgb, var(--color-surface, #AEE3FC), #fff0 40%);
+        backdrop-filter: blur(4px);
 
         box-shadow: var(--shadow-border, 2px 2px 0 0 rgba(0, 0, 0, 0.25));
     }
@@ -75,7 +76,7 @@ import GithubIcon from '../../assets/icons/Github.svg';
         text-edge: cap;
 
         /* Headline 4 */
-        font-family: 'Saira';
+        font-family: 'Saira Condensed',sans-serif;
         font-size: 20px;
         font-style: normal;
         font-weight: 600;
