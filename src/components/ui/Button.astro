@@ -1,4 +1,6 @@
 ---
+import { undefined } from 'astro:schema';
+
 interface Props {
     text: string;
     href?: string;
@@ -6,6 +8,7 @@ interface Props {
     type?: 'button' | 'submit' | 'reset';
     action?: string;
     disabled?: boolean;
+    newTab?: boolean;
 }
 
 const {
@@ -15,12 +18,17 @@ const {
     type = 'button',
     action,
     disabled = false,
+    newTab=false,
 } = Astro.props;
 ---
 
 {
     href ? (
-        <a class={`boton boton-${variant}`} href={href}>
+        <a class={`boton boton-${variant}`} 
+            href={href}
+            target={newTab? '_blank' : '_self'}
+            rel={newTab ? 'noopener noreferrer' : 'null'}
+            >
             {text}
         </a>
     ) : (
@@ -40,10 +48,10 @@ const {
     .boton {
         display: flex;
         height: 29px;
-        min-width: 100px;
+        min-width: 80px;
         padding: 5px 50px 5px 20px;
-        justify-content: center;
-        align-items: center;
+        justify-content: left;
+        align-items: left;
         gap: 10px;
 
         box-shadow: var(--shadow-border, 2px 2px 0 0 rgba(0, 0, 0, 0.25));

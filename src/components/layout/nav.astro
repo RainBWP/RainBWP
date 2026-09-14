@@ -4,13 +4,13 @@ import GithubIcon from '../../assets/icons/Github.svg';
 
 <nav class="nav" aria-label="Navegación principal">
     <h4 class="logo-text" >RBW - Dimi</h4>
-    <div class="nav-links">
+    <div class="nav-links" hidden>
         <a href="#inicio">Productos</a>
         <a href="#inicio">Habilidades</a>
         <a href="#inicio">Experiencia</a>
     </div>
     <div class="links-buttons" >
-        <GithubIcon href="https://github.com/RainBWP" />
+        <a href="https://github.com/RainBWP" ><GithubIcon /></a>
     </div>
 </nav>
 
@@ -18,7 +18,7 @@ import GithubIcon from '../../assets/icons/Github.svg';
     .nav {
 
         display: flex;
-        width: clamp(100%,calc(100% - 10px), 800px);
+        width: min(calc(100% - 20px),1200px);
         height: 70px;
         padding: 10px 40px;
         justify-content: space-between;
@@ -27,7 +27,7 @@ import GithubIcon from '../../assets/icons/Github.svg';
 
         position: fixed;
         top: 5px;
-        left: 50%;
+        left: 50vw;
         z-index: 1000;
 
         min-height: 48px;

@@ -12,6 +12,7 @@ interface Props {
 	};
 	variant?: 'primary' | 'secondary';
 	reverse?: boolean;
+	newtab?: boolean
 }
 
 const {
@@ -22,6 +23,7 @@ const {
 	imagen,
 	variant = 'primary',
 	reverse = false,
+	newtab = false
 } = Astro.props;
 ---
 
@@ -36,7 +38,7 @@ const {
 		<div class:list={['tarjeta-iconos', { 'tarjeta-iconos-reverse': reverse }]} aria-hidden="true">
             <slot name="iconos" />
         </div>
-		<Button text={botonTexto} href={botonHref} />
+		<Button text={botonTexto} href={botonHref} newTab />
 	</div>
 </article>
 

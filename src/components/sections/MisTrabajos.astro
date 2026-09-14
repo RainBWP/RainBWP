@@ -8,7 +8,7 @@ import LenionThumbnail from  '../../assets/images/lenionindex.png';
 
 // Importar Iconos SVG
 import AffinityStudio from '../../assets/icons/affinity-studio.svg';
-import Astro from '../../assets/icons/Astro.svg';
+import AstroIcon from '../../assets/icons/AstroIcon.svg';
 import Cloudflare from '../../assets/icons/Cloudflare.svg';
 import Css from '../../assets/icons/css.svg';
 import Figma from '../../assets/icons/Figma.svg';
@@ -22,49 +22,61 @@ import VSCode from '../../assets/icons/VSCode.svg';
 <section class="mis-trabajos" id="mis-trabajos">
     <h1>Mis Trabajos</h1>
     <p>Son proyectos que actualmente estoy trabajando y en producción 🥳</p>
-    <TarjetaGrande
-    titulo="Gearmoney"
-    contenido="Aplicación hecha enteramente en Flutter como proyecto final.Encargado de la UX y UI en diseño, y control de calidad en el mismo. "
-    botonTexto="Ver Codigo Fuente"
-    botonHref="https://github.com/RainBWP/gearmoney"
-    variant="primary"
-    reverse={false}
-    imagen={{ src: GearmoneyThumbnail.src, alt: 'Gearmoney' }}
-    >
-            <img class="icono" src={AffinityStudio.src} alt="Affinity Studio" slot="iconos" />
-            <img class="icono" src={Figma.src} alt="Figma" slot="iconos" />
-            <img class="icono" src={Flutter.src} alt="Flutter" slot="iconos" />
-            <img class="icono" src={VSCode.src} alt="VSCode" slot="iconos" />
-    </TarjetaGrande>
-    <TarjetaGrande
-    titulo="Lenion"
-    contenido="Página principal de la empresa lenion que amigos de la universidad creamos diseño, codigo, levantamiento y mantenimiento realizado por mi"
-    botonTexto="Visitar Sitio Web"
-    botonHref="https://lenion.mx"
-    variant="secondary"
-    reverse={true}
-    imagen={{ src: LenionThumbnail.src, alt: 'Lenion' }}
-    >
-            <img class="icono" src={Cloudflare.src} alt="Cloudflare" slot="iconos" />
-            <img class="icono" src={Figma.src} alt="Figma" slot="iconos" />
-            <img class="icono" src={Css.src} alt="CSS" slot="iconos" />
-            <img class="icono" src={Html.src} alt="HTML" slot="iconos" />
-            <img class="icono" src={NodeJs.src} alt="Node.js" slot="iconos" />
-            <img class="icono" src={VSCode.src} alt="VSCode" slot="iconos" />
-            <img class="icono" src={Astro.src} alt="Astro" slot="iconos" />
-    </TarjetaGrande>
+    <div class="card-containers">
+        <TarjetaGrande
+            titulo="Gearmoney"
+            contenido="Aplicación hecha enteramente en Flutter como proyecto final.Encargado de la UX y UI en diseño, y control de calidad en el mismo. "
+            botonTexto="Ver Codigo Fuente"
+            botonHref="https://github.com/RainBWP/gearmoney"
+            variant="primary"
+            reverse={false}
+            imagen={{ src: GearmoneyThumbnail.src, alt: 'Gearmoney' }}
+            >
+                    <img class="icono" src={AffinityStudio.src} alt="Affinity Studio" slot="iconos" />
+                    <img class="icono" src={Figma.src} alt="Figma" slot="iconos" />
+                    <img class="icono" src={Flutter.src} alt="Flutter" slot="iconos" />
+                    <img class="icono" src={VSCode.src} alt="VSCode" slot="iconos" />
+        </TarjetaGrande>
+        <TarjetaGrande
+            titulo="Lenion"
+            contenido="Página principal de la empresa lenion que amigos de la universidad creamos diseño, codigo, levantamiento y mantenimiento realizado por mi"
+            botonTexto="Visitar Sitio Web"
+            botonHref="https://lenion.mx"
+            newtab
+            variant="secondary"
+            reverse={true}
+            imagen={{ src: LenionThumbnail.src, alt: 'Lenion' }}
+            >
+                    <img class="icono" src={Cloudflare.src} alt="Cloudflare" slot="iconos" />
+                    <img class="icono" src={Figma.src} alt="Figma" slot="iconos" />
+                    <img class="icono" src={Css.src} alt="CSS" slot="iconos" />
+                    <img class="icono" src={Html.src} alt="HTML" slot="iconos" />
+                    <img class="icono" src={NodeJs.src} alt="Node.js" slot="iconos" />
+                    <img class="icono" src={VSCode.src} alt="VSCode" slot="iconos" />
+                    <img class="icono" src={AstroIcon.src} alt="Astro" slot="iconos" />
+        </TarjetaGrande>
+    </div>
+    
 </section>
 
 <style>
+    
     .mis-trabajos {
         display: flex;
-        padding: 10px;
         flex-direction: column;
         justify-content: left;
         align-items: flex-start;
         gap: 10px;
         align-self: stretch;
         width: 100%;
+    }
+    h1, p, .card-containers{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .card-containers{
+        padding: 20px;
+        margin-bottom: 10px;
     }
     h1 {
         margin: 0;
