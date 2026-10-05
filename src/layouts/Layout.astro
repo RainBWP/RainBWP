@@ -63,11 +63,12 @@ const {
 		font-display: swap;
 	}
 
+	/* Saira is used only for italics, at Thin (100) */
 	@font-face {
 		font-family: 'Saira';
-		src: url('/fonts/Saira-VariableFont.woff') format('woff');
-		font-style: normal;
-		font-weight: 100 900;
+		src: url('/fonts/Saira-Italic-VariableFont.woff') format('woff');
+		font-style: italic;
+		font-weight: 100;
 		font-display: swap;
 	}
 	:root {
@@ -85,7 +86,7 @@ const {
 		--color-background: var(--white);
 		--color-surface: var(--terteary);
 		--color-text: var(--dark);
-		--color-text-muted: #6C757D;
+		--color-text-muted: #666E76;
 		--color-border: var(--terteary);
 		--color-accent: var(--extra);
 
@@ -150,6 +151,12 @@ const {
 		font-weight: 700;
 		line-height: normal;
 		text-transform: capitalize;
+	}
+	em,
+	i {
+		font-family: 'Saira', sans-serif;
+		font-style: italic;
+		font-weight: 100;
 	}
 	p{
 		/* Parrafo */
