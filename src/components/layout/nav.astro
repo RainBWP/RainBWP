@@ -3,109 +3,105 @@ import GithubIcon from '../../assets/icons/Github.svg';
 ---
 
 <nav class="nav" aria-label="Navegación principal">
-    <h4 class="logo-text" >RBW - Dimi</h4>
+    <h4 class="logo-text">RBW - Dimi</h4>
     <div class="nav-links" hidden>
-        <a href="#inicio">Productos</a>
+        <a class="nav-link" href="#inicio">Productos</a>
     </div>
-    <div class="links-buttons" >
-        <a class="button-href" href="https://github.com/RainBWP" ><GithubIcon /></a>
+    <div class="links-buttons">
+        <a class="button-href" href="https://github.com/RainBWP" aria-label="GitHub"><GithubIcon /></a>
     </div>
 </nav>
 
 <style>
     .nav {
-
         display: flex;
-        width: min(calc(100% - 20px),1200px);
-        height: 70px;
-        padding: 10px 40px;
+        width: min(calc(100% - 20px), var(--size-content, 1200px));
+        height: var(--size-nav, 70px);
+        padding: var(--space-2, 10px) var(--space-5, 40px);
         justify-content: space-between;
         align-items: center;
-        gap: 63px;
+        gap: var(--space-6, 50px);
 
         position: fixed;
         top: 5px;
         left: 50vw;
         z-index: 1000;
-
-        min-height: 48px;
-
         transform: translateX(-50%);
         box-sizing: border-box;
-        border-radius: 999px;
 
-        border-radius: 18px;
-        border: none;
-        background: color-mix(in srgb, var(--color-surface, #AEE3FC), #fff0 40%);
-        backdrop-filter: blur(4px);
-
-        box-shadow: var(--shadow-border, 2px 2px 0 0 rgba(0, 0, 0, 0.25));
-    }
-
-    .nav a {
-        color: var(--Extra, #4C4E7D);
-        text-align: center;
-        leading-trim: both;
-        text-edge: cap;
-
-        /* Enlaces */
-        font-family: Saira;
-        font-size: 16px;
-        font-style: italic;
-        font-weight: 400;
-        line-height: normal;
-        text-decoration-line: underline;
-        text-decoration-style: solid;
-        text-decoration-skip-ink: auto;
-        text-decoration-thickness: auto;
-        text-underline-offset: auto;
-        text-underline-position: from-font;
-        text-transform: capitalize;
-    }
-
-    .nav a:hover {
-        color: var(--color-text, #151622);
+        border-radius: var(--radius-none, 0);
+        border: var(--size-border, 2px) solid var(--color-accent, #4c4e7d);
+        background: var(--color-surface, #aee3fc);
+        box-shadow: var(--shadow-border, 4px 4px 0 0 rgba(0, 0, 0, 0.25));
     }
 
     .logo-text {
-        /* Headline 4 */
-        color: #000;
-        leading-trim: both;
-        text-edge: cap;
-
-        /* Headline 4 */
-        font-family: 'Saira Condensed',sans-serif;
+        margin: 0;
+        width: max(20%, 100px);
+        color: var(--color-accent, #4c4e7d);
+        font-family: 'Saira Condensed', sans-serif;
         font-size: 20px;
-        font-style: normal;
         font-weight: 600;
-        line-height: normal;
+        line-height: 1;
         text-transform: capitalize;
-        width: max(20%,100px);
     }
 
     .nav-links {
         display: flex;
         justify-content: center;
         align-items: center;
+        gap: var(--space-3, 20px);
         flex: 1 0 0;
     }
-    .links-buttons{
-        width: max(20%,50px);
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: right;
+
+    .nav-link {
+        color: var(--extra, #4c4e7d);
+        font-family: 'Saira Condensed', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        text-transform: capitalize;
     }
-    .button-href{
-        width: 40px;
-        height: 40px;
-        margin: 0;
-        padding: 0;
+
+    .nav-link:hover {
+        color: var(--color-text, #151622);
+    }
+
+    .links-buttons {
+        width: max(20%, 50px);
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .button-href {
+        display: block;
+        width: var(--size-icon, 40px);
+        height: var(--size-icon, 40px);
+        background: none;
+        filter: drop-shadow(4px 4px 0 rgba(0, 0, 0, 0.25));
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .button-href:hover {
+        transform: scale(1.1);
+    }
+
+    .button-href :global(svg) {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .nav a:focus-visible {
+        outline: 3px solid var(--dark, #151622);
+        outline-offset: 3px;
     }
 
     @media (max-width: 700px) {
         .nav {
-            gap:20px;
+            gap: var(--space-3, 20px);
+            padding: var(--space-2, 10px) var(--space-3, 20px);
         }
         .nav-links {
             display: none;
