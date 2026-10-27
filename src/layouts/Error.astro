@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/ui/Button.astro';
+
+interface Props {
+    code: number;
+    message?: string;
+}
+const mensages: Record<string, string> = {
+    '404': 'La página que estás buscando no existe.',
+    '500': 'Ha ocurrido un error en el servidor.',
+    '403': 'No tienes permiso para acceder a esta página.',
+    '400': 'Solicitud incorrecta.',
+    '401': 'No autorizado. Por favor, inicia sesión.',
+    '502': 'Puerta de enlace incorrecta.',
+    '503': 'Servicio no disponible. Intenta nuevamente más tarde.',
+    '504': 'Tiempo de espera de la puerta de enlace agotado.'
+};
+
+const {
+    code,
+    message = mensages[code] || 'Ocurrió un error inesperado.'
+} = Astro.props;
+
+---
+
+<Layout title={`Error ${code} - RainBW`}>
+    <section class="default-div">
+        <h1>¯\_(ツ)_/¯</h1>
+        <p>{message}</p>
+        <Button text="Volver al inicio" href="/" variant="secondary" />
+
+    </section>
+</Layout>
+
+<style>
+    .default-div {
+        padding-top: 200px;
+        padding-bottom: 200px;
+    }
+</style>
