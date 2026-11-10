@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/sections/PageHero.astro';
+
+const licencias = [
+	{
+		nombre: 'Sofia Sans',
+		uso: 'tipografia de todo el sitio (Sofia Sans y Sofia Sans Condensed).',
+		autor: 'copyright 2019 The Sofia Sans Project Authors',
+		licencia: 'sil Open Font License 1.1',
+		licenciaHref: '/fonts/SofiaSans-OFL.txt',
+		sitio: 'https://github.com/lettersoup/Sofia-Sans',
+	},
+	{
+		nombre: 'coolicons',
+		uso: 'iconos de los botones. Se modifico su color para seguir el tema del sitio.',
+		autor: 'kryston Schwarze',
+		licencia: 'creative Commons Attribution 4.0 (CC BY 4.0)',
+		licenciaHref: 'https://creativecommons.org/licenses/by/4.0/',
+		sitio: 'https://coolicons.cool/',
+	},
+	{
+		nombre: 'Astro',
+		uso: 'framework con el que esta construido el sitio.',
+		autor: 'copyright (c) 2021 Fred K. Schott',
+		licencia: 'mit License',
+		licenciaHref: 'https://github.com/withastro/astro/blob/main/LICENSE',
+		sitio: 'https://astro.build/',
+	},
+];
+---
+
+<Layout title='Licencias | RainBW'>
+
+	<PageHero
+		kicker="respeta las..."
+		title="LICENCIAS"
+		subtitle="uwu"
+		titleSize="clamp(56px, 12vw, 64px)"
+		scrollTo="licencias"
+		scrollLabel="Bajar a las licencias"
+	/>
+
+	<section id="licencias">
+		<h2>licencias</h2>
+
+		{licencias.map((item) => (
+			<article class="licencia">
+				<h3>{item.nombre}</h3>
+				<p>{item.uso}</p>
+				<p>{item.autor}</p>
+				<p>
+					<a href={item.licenciaHref} target="_blank" rel="noopener noreferrer">{item.licencia}</a>
+					·
+					<a href={item.sitio} target="_blank" rel="noopener noreferrer">sitio del proyecto</a>
+				</p>
+			</article>
+		))}
+	</section>
+
+</Layout>
+
+<style>
+	.licencia {
+		width: 100%;
+	}
+</style>
