@@ -1,0 +1,77 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PageHero from "../../components/sections/PageHero.astro";
+import Button from "../../components/ui/Button.astro";
+
+const player = (kind: 'tracks' | 'playlists', id: string) =>
+    `https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/${kind}/soundcloud%253A${kind}%253A${id}&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true`;
+
+const canciones = [
+    { titulo: 'TeVasDepresion - ElApagonParteChida', href: 'https://soundcloud.com/botrainbw/tevasdepresion', src: player('tracks', '2274982733'), alto: 166 },
+    { titulo: 'Ahora Soy Peor (RBW Remix)', href: 'https://soundcloud.com/botrainbw/ahora-soy-peor-rbw-remix', src: player('tracks', '1315317757'), alto: 166 },
+    { titulo: 'Crystal Evening - EP', href: 'https://soundcloud.com/botrainbw/sets/crystal-evening-ep', src: player('playlists', '1294265983'), alto: 450 },
+    { titulo: 'Todos Somos Necesarios - Mango(Remix RBW)', href: 'https://soundcloud.com/botrainbw/todos-somos-necesarios-mangoremix-rbw', src: player('tracks', '947504272'), alto: 166 },
+    { titulo: 'Ahora Soy Peor (Remix) [Instrumental]', href: 'https://soundcloud.com/botrainbw/ahora-soy-peor-remix-instrumental', src: player('tracks', '1184428498'), alto: 166 },
+];
+---
+
+<Layout title="Música | RainBW">
+    <PageHero
+        kicker="asies, hago"
+        title="MUSICA"
+        subtitle="desde hace tiempo hago musica por diversion, nada profesional, pero ahi esta mi trabajo."
+        titleSize="clamp(72px, 21vw, 88px)"
+        scrollTo="mi-musica"
+        scrollLabel="Bajar a mi musica"
+    >
+        <Button text="Cloudsound" href="https://soundcloud.com/rainbwp" newTab />
+    </PageHero>
+
+    <section id="mi-musica">
+        <h2>mi musica</h2>
+        <p>si quieres escuchar mi musica, puedes hacerlo en mi perfil de Cloudsound, donde subo mis canciones y proyectos.</p>
+
+        <div class="soundcloud-embeds">
+            {canciones.map((cancion) => (
+                <div class="soundcloud-embed">
+                    <iframe
+                        title={cancion.titulo}
+                        width="100%"
+                        height={cancion.alto}
+                        scrolling="no"
+                        frameborder="no"
+                        loading="lazy"
+                        allow="autoplay; encrypted-media"
+                        src={cancion.src}
+                    ></iframe>
+                    <p class="soundcloud-credit">
+                        <a href="https://soundcloud.com/botrainbw" target="_blank" rel="noopener noreferrer">rainbwo</a>
+                        ·
+                        <a href={cancion.href} target="_blank" rel="noopener noreferrer">{cancion.titulo}</a>
+                    </p>
+                </div>
+            ))}
+        </div>
+    </section>
+</Layout>
+
+<style>
+    .soundcloud-embeds {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-self: stretch;
+        margin-top: 10px;
+    }
+
+    .soundcloud-embed iframe {
+        display: block;
+        border: 0;
+    }
+
+    .soundcloud-credit {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+</style>

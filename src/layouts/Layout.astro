@@ -1,6 +1,5 @@
 ---
 import '../global.css';
-import Navbar from '../components/layout/nav.astro';
 import Footer from '../components/layout/footer.astro';
 
 interface Props{
@@ -16,16 +15,35 @@ const {
 <html lang="es">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=fit" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+		<meta name="color-scheme" content="light dark" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.webp" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 	<body>
-		<Navbar />
 		<slot />
 		<Footer />
+
+		<script>
+			// Al volver hasta arriba se quita el #seccion de la URL, para que al
+			// recargar la pagina no brinque otra vez a esa seccion.
+			let pending = false;
+
+			const clearHash = () => {
+				pending = false;
+				if (window.scrollY <= 0 && location.hash) {
+					history.replaceState(null, '', location.pathname + location.search);
+				}
+			};
+
+			window.addEventListener('scroll', () => {
+				if (pending) return;
+				pending = true;
+				requestAnimationFrame(clearHash);
+			}, { passive: true });
+		</script>
 	</body>
-	
+
 </html>
